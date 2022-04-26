@@ -4,7 +4,7 @@ angular.module('appModule')
       enabled: true,
     });
   })
-  .config(($stateProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
       .state({
         name: 'app',
@@ -24,5 +24,12 @@ angular.module('appModule')
         name: 'team-performance',
         url: '/team-performance',
         template: '<v-performance-page></v-performance-page>',
+      })
+      .state({
+        name: '404',
+        url: '/404',
+        template: '<v-404-page></v-404-page>',
       });
+
+    $urlRouterProvider.otherwise('/404');
   });
