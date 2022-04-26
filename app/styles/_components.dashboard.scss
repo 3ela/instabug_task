@@ -49,3 +49,22 @@
   padding: 0 16px;
   border-radius: 4px;
 }
+
+
+.c-employees_filter_container {
+  text-align: center;
+  padding: 20px;
+}
+
+.c-btn-pri {
+  background-color: $primary;
+  color: white;
+  padding: .4rem .5rem;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.highlightedText {
+  background: yellow;
+  text-emphasis-color: yellow;
+} 
