@@ -5,9 +5,11 @@
     "@uirouter/angularjs": "^1.0.30",
     "@vue/composition-api": "^1.4.4",
     "angular": "^1.8.2",
+    "axios": "^0.27.1",
     "echarts": "^5.2.2",
     "moment": "^2.29.1",
     "ngVue": "^1.7.8",
+    "url": "^0.11.0",
     "vue": "^2.6.14",
     "vue-echarts": "^6.0.1",
     "vuex": "^3.6.2"
@@ -16,6 +18,7 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.8.7",
     "angularjs-template-loader": "^0.1.2",
+    "babel-jest": "^28.0.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "eslint": "^8.6.0",
@@ -39,7 +42,13 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.3"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
   "scripts": {
-    "start": "webpack-dev-server --open --progress"
+    "start": "webpack-dev-server --open --progress",
+    "test": "jest"
   }
 }

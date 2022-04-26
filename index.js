@@ -7,6 +7,7 @@ import './app/services/employees.service';
 import './app/components/employees-list/employees-list.component';
 
 import './app/filters/highlight.module';
+import './app/plugins';
 
 import './app/pages/home-page/home-page.controller';
 import './app/app.routes.js';
