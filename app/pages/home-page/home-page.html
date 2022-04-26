@@ -1,10 +1,11 @@
 <div class="c-dashboard">
-  <div class="c-filters__container">
-    [Place search component here]
+  <div class="c-filters__container" ng-controller="homeController as ctrl">
+    <employees-list-filter
+      v-props="ctrl"
+    ></employees-list-filter>
   </div>
 
-  <employees-list employees-list="homePageVm.employees"></employees-list>
-
+  <employees-list employees-list="homePageVm.employees" search-text="homePageVm.searchText"></employees-list>
   <div class="c-dashboard__footer">
     <button class="c-button">
       Load More
