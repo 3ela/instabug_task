@@ -2,11 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+var url = require('url');
 
 module.exports = {
   mode: 'development',
   entry: {
     index: './index.js',
+  },
+  resolve: {
+    fallback: { "url": require.resolve("url/") },
   },
   devtool: 'inline-source-map',
   plugins: [

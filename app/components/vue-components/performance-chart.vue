@@ -32,39 +32,39 @@ export default {
   components: {
     VChart,
   },
-
+  props: ['chartData'],
   data() {
     return {
-      chartData: [
-        {
-          date_ms: 1641772800000,
-          performance: 0.2,
-        },
-        {
-          date_ms: 1641859200000,
-          performance: 0.33,
-        },
-        {
-          date_ms: 1641945600000,
-          performance: 0.53,
-        },
-        {
-          date_ms: 1642032000000,
-          performance: 0.31,
-        },
-        {
-          date_ms: 1642118400000,
-          performance: 0.65,
-        },
-        {
-          date_ms: 1642204800000,
-          performance: 0.88,
-        },
-        {
-          date_ms: 1642291200000,
-          performance: 0.07,
-        },
-      ],
+    //   chartData: [
+    //     {
+    //       date_ms: 1641772800000,
+    //       performance: 0.2,
+    //     },
+    //     {
+    //       date_ms: 1641859200000,
+    //       performance: 0.33,
+    //     },
+    //     {
+    //       date_ms: 1641945600000,
+    //       performance: 0.53,
+    //     },
+    //     {
+    //       date_ms: 1642032000000,
+    //       performance: 0.31,
+    //     },
+    //     {
+    //       date_ms: 1642118400000,
+    //       performance: 0.65,
+    //     },
+    //     {
+    //       date_ms: 1642204800000,
+    //       performance: 0.88,
+    //     },
+    //     {
+    //       date_ms: 1642291200000,
+    //       performance: 0.07,
+    //     },
+    //   ],
     };
   },
 
@@ -87,7 +87,31 @@ export default {
           transitionDuration: 0,
           confine: false,
           hideDelay: 0,
-          padding: 0,
+          formatter: function (params) {
+            return `
+              <strong> ${params[0].axisValue} </strong>  <div> ${params[0].marker} Team Performance Index :  ${parseFloat(params[0].value).toFixed(0)} % </div>
+            `
+          },
+          padding: [10, 20],
+          backgroundColor: 'rgb(0,0,0)',
+          textStyle: {
+            color: '#fff'
+          },
+          extraCssText: 'text-align: center;'
+        },
+        visualMap: {
+          type: 'piecewise',
+          pieces: [
+              // Range of a piece can be specified by property min and max,
+              // where min will be set as -Infinity if ignored,
+              // and max will be set as Infinity if ignored.
+              {min: 80, max: 100, color: '#178B48'},
+              {min: 50, max: 80, color: '#F8D530'},
+              {min: 0, max: 50, color: '#EE5F48'},
+          ],
+          align: 'left',
+          right: '0',
+          top: '40'
         },
         grid: {
           left: "30px",
